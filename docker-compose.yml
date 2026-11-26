@@ -1,0 +1,18 @@
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: library-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: library_root_2026
+      MYSQL_DATABASE: digital_library
+      MYSQL_USER: library_user
+      MYSQL_PASSWORD: library_pass_2026
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
